@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shopping list</title>
+        <style>
+            p{
+                color: yellow;
+                font-family: "arial" , sans-serif;
+                font-size: 1.2em;
+            }
+            body {
+            color: white;
+            background-color: black;
+            }
+            #purchases {
+                border: 1px solid white;
+                background-color: #333;
+                color: #ccc;
+                padding: 1em;
+            }
+            .special {
+                font-style: italic;
+            }
+            #purchases li {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>what to buy</h1>
+        <p title="a gentle reminder">Don't forget to buy this stuff.</p> 
+        <p>This is just a test</p>
+        <ul id="purchases">
+            <li>A tin of beans</li>
+            <li class="sale">Cheese</li>
+            <li class="sale important">milk</li>
+            <!-- <p class="special">This paragraph has the special class</p> -->
+            <!-- <h2 class="special">So does this headline</h2> -->
+        </ul>
+        <script>
+            // alert(document.getElementsByTagName("li").lenght);
+            // for (var i=0; i < document.getElementsByTagName("li").length; i++) {
+            //     var items = document.getElementsByTagName("li");
+            //     for (var i=0; i < items.length; i++){
+            //         alert(typeof items[i]);
+            //     }
+            // }
+            // alert(document.getElementsByTagName("*").length);
+            // var shopping = document.getElementById("purchases");
+            // var items = shopping.getElementsByTagName("*");
+            // alert(items.length);
+            // alert(document.getElementsByClassName("important sale").length);
+            // var shopping = document.getElementById("purchases");
+            // var sales = shopping.getElementsByClassName("sale");
+            // alert(sales.length);
+            // function getElementsByClassName(node,classname) {
+            //     if(node.getElementsByClassName) {
+            //         // 使用现有方法
+            //         return node.getElementsByClassName(classname);
+            //     } else {
+            //         var results = new Array();
+            //         var elems = node.getElementsByTagName("*");
+            //         for (var i=0; i<elems.length; i++) {
+            //             if (elems[i].className.index0f(classname) != -1) {
+            //                 results[results.length] = elems[i];
+            //             }
+            //         }
+            //         return results;
+            //     }
+            // }
+            // var shopping = document.getElementById("purchases");
+            // var sales = getElementsByClassName(shopping, "sale");
+            // alert(sales.length);
+            var paras = document.getElementsByTagName("p");
+            for (var i=0; i < paras.length; i++ ) {
+              var title_text = paras[i].getAttribute("title");
+              if (title_text) alert(title_text);
+            }
+            var shopping = document.getElementById("purchases");
+            var sales = getElementsByClassName(shopping, "sale"); 
+            var paras = document.getElementsByTagName("p");
+            for (var i=0; i < paras.length; i++ ) {
+                alert(paras[i].getAttribute("title"));
+            }
+            var shopping = document.getElementById("purchases");
+            alert(shopping.getAttribute("title"));
+            shopping.setAttribute("title","a list of goods");
+            alert(shopping.getAttribute("title"));
+        </script>
+    </body>
+</html>
