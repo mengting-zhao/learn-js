@@ -33,7 +33,7 @@ function insertAfter(newElement,targetElement) {
   var parent = targetElement.parentNode;
   if (parent.lastChild == targetElement) {
   } else {
-     parent.insertBefore(newElement,targetElement,nextSibling);
+     parent.insertBefore(newElement,targetElement.nextSibling);
   }
 }
 
@@ -65,10 +65,10 @@ function prepareGallery() {
   var links = gallery.getElementsByTagName("a");
   for ( var i=0; i < links.length; i++) {
     links[i].onclick = function() {
-      return showPic(this) ? false : true;
-      // return showPic(this);
+      // return showPic(this) ? false : true;
+      return showPic(this);
     }
-    // links[i].onkeypress = links[i].onclick;
+    links[i].onkeypress = links[i].onclick;
   }
 }
 
@@ -78,8 +78,8 @@ function showPic(whichpic) {
   var placeholder = document.getElementById("placeholder");
   placeholder.setAttribute("src",source);
   if (!document.getElementById("description")) return false;
-  if (whilepic.getAttribute("title")) {
-    var next = whichpic.getAttribute("title");
+  if (whichpic.getAttribute("title")) {
+    var text = whichpic.getAttribute("title");
   } else {
     var text = "";
   }
